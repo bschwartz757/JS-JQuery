@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Order Form</title>
+
+<style>
+	.hidden {
+		display:none;	
+	}
+	
+	.error {
+		color:red;	
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+        $("#order-form").submit(validateForm);
+    });
+	// validate form controls
+	function validateForm() {
+		$(".error").hide();
+		
+		  var validOrder = validateTextField("#order-name", "#error-order-name");
+		  
+		  var validExtras = validateCheckbox("#extras", "#error-extras");
+		  // returns boolean; functions defined below
+		  // if the fields are valid, submit form
+		  return validOrder && validExtras;
+	}
+
+	function validateTextField(fieldId, errorId)
+	{
+		// if the text field is blank, return false
+		if($(fieldId).val() == "")
+		{
+			$(errorId).show();
+			return false;	
+		}
+		// if the user entered anything at all, return true (valid)
+		return true;
+	}
+	
+	function validateCheckbox(fieldId, errorId)
+	{
+		// check to see the box is not checked. If not checked, show error
+		if(!$(fieldId).is(":checked"))
+		{
+			$(errorId).show();
+			return false;	
+		}
+		// if checked, return true (valid)
+		return true;
+	}
+	
+</script>
+
+</head>
+
+<body>
+<h1>Welcome to my online store</h1>
+
+<form id="order-form" action="success.html">
+	<p>
+    	<label>
+        	<input type="text" id="order-name" name="order-name">
+    	</label>
+        <span id="error-order-name" class="hidden error">* Field cannot be blank</span>
+    </p>
+    
+    <p>
+    	<label>
+        	<input type="checkbox" id="extras" name="extras">Extras
+        </label>
+        <span id="error-extras" class="hidden error">* Are you really sure you don't want extras?</span>
+    </p>
+    
+    <button type="submit" name="submit">Submit order</button>
+</form>
+</body>
+</html>

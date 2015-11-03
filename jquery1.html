@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	.colored {
+		color:#2074C3;
+	}
+</style>
+<!-- jQuery script needs to come before your script --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+	// jQuery equivalent window.onload:
+	$ (document).ready (function() { // parens use slightly different syntax. .ready is the same as window.onload
+		// haven't created doWork yet
+		$ ("#btn-clk").click (doWork);
+		
+	});
+	
+	// create function doWork - this is the Event Handler:
+	function doWork()
+	{
+		// $ ("#msg").html ("hello, jQuery!");	
+		// $ ("#msg").hide();
+		// $ ("#msg").toggle();
+		
+		// the # symbol is the same syntax as css --> gets the id="animals". .slideUp() uses the pre-built functionality of the jQuery library. parameter gives the number of milliseconds to execute the animation, OR can use "slow"/"fast" etc:
+		// $ ("#animals li").slideUp(1500);
+		
+		// $ ("#animals li").slideToggle("slow");
+		// $ ("#animals li").addClass ("colored");
+		
+		// selects odd numbers, BUT starts at 0 so the first colored item is #2 in the list:
+		// $ ("#animals li:odd").toggleClass("colored");
+		
+		// add a new animal:
+		$("#animals").append("<li>Jaguar</li>");
+	}
+	
+</script>
+</head>
+
+<body>
+
+	<button id="btn-clk">Click me!</button>
+    <p id="msg">This is a message. It is only a message.</p>
+    <h2>Favorite Animals:</h2>
+		<ul id="animals">
+        	<li>Cats</li>
+            <li>Dogs</li>
+            <li>Buffalo</li>
+            <li>Tigers</li>
+            <li>Mongoose</li>
+        </ul>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Coffee Shops</title>
+<link href="coffeebars.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
+
+<!--Sortable references-->
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script>
+  $(function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+  });
+  </script>
+<!--End Sortable references-->
+
+<!--Show Demo (addClass) References-->	
+  <style>
+  .toggler { width: 500px; height: 300px; }
+  #button { margin-bottom:8em; padding: .5em 1em; text-decoration: none; }
+  #effect { width: 300px; height: 350px; margin-bottom:2em; padding: 0.4em; position: relative; }
+  #effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+  </style>
+  <script>
+  $(function() {
+    // run the currently selected effect
+    function runEffect() {
+      // get effect type from
+      var selectedEffect = $( "#effectTypes" ).val();
+ 
+      // most effect types need no options passed by default
+      var options = {};
+      // some effects have required parameters
+      if ( selectedEffect === "scale" ) {
+        options = { percent: 100 };
+      } else if ( selectedEffect === "size" ) {
+        options = { to: { width: 300, height: 300 } };
+      }
+ 
+      // run the effect
+      $( "#effect" ).show( selectedEffect, options, 1000, callback );
+    };
+ 
+    //callback function to bring a hidden box back
+    function callback() {
+      setTimeout(function() {
+        $( "#effect:visible" ).removeAttr( "style" ).fadeOut();
+      }, 3000 );
+    };
+ 
+    // set effect from select menu value
+    $( "#button" ).click(function() {
+      runEffect();
+    });
+ 
+    $( "#effect" ).hide();
+  });
+  </script>
+<!--End Show Demo (addClass) References-->
+
+<!--Resizable-->
+  <style>
+  #resizable { width: 300px; height: 300px; padding: 0.5em; }
+  #resizable h3 { text-align: center; margin: 0; }
+  </style>
+  <script>
+  $(function() {
+    $( "#resizable" ).resizable();
+  });
+  </script> 
+<!--End Resizable-->
+
+</head>
+
+<body>
+
+<div id = "wrapper">
+	<div id= "header" align= "center">
+<h1>All About Coffee</h1>
+</div>
+
+<p>A list of my favorite coffee shops in Ballard. Feel free to re-order them according to YOUR taste!</p>
+
+<ul id="sortable">
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Tony's</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Neptune</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Slate</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Caffe Vita</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Makeda Coffee</li>
+</ul>
+  
+    <div class="toggler">
+    <p>Choose some effects below! jQuery ui makes coffee better.</p>
+  <div id="effect" class="ui-widget-content ui-corner-all">
+    <h3 class="ui-widget-header ui-corner-all">Show</h3>
+	<img src="imgs/tonys_coffee.jpg" alt="tony's coffee 300x300" />
+  </div>
+</div>
+ 
+<select name="effects" id="effectTypes">
+  <option value="blind">Blind</option>
+  <option value="bounce">Bounce</option>
+  <option value="clip">Clip</option>
+  <option value="drop">Drop</option>
+  <option value="explode">Explode</option>
+  <option value="fold">Fold</option>
+  <option value="highlight">Highlight</option>
+  <option value="puff">Puff</option>
+  <option value="pulsate">Pulsate</option>
+  <option value="scale">Scale</option>
+  <option value="shake">Shake</option>
+  <option value="size">Size</option>
+  <option value="slide">Slide</option>
+</select>
+ 
+<button id="button" class="ui-state-default ui-corner-all">Coffee Me!</button>
+ 
+ 
+<div id="resizable" class="ui-widget-content">
+  <h3 class="ui-widget-header">Coffee bars?</h3>
+  <p>Recently, the craft cocktail resurgence has transformed the bar scene in Seattle, bringing a renewed commitment to quality and originality while at the same time embracing turn-of-the-century recipes and culture. Now this concept seems to be gaining traction in neighborhood coffee shops, and it may portend a larger movement in the local coffee scene in general. The result? Coffee bars.</p>
+</div> 
+
+    
+<div id="footer">
+<p2>This is a template page from a previous class</p2>
+</div>
+</div>
+</body>
+</html>

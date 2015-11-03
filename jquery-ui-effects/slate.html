@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Slate</title>
+<link href="../../css/coffeebars.css" rel="stylesheet" type="text/css">
+
+  <style>
+      #map_canvas {
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom:10px;		
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map_canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(47.668318,  -122.363410),
+          zoom: 17,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+
+<div id = "wrapper">
+	<div id="header" align="center">
+		<h1>Slate Coffee Bar</h1>
+    </div>
+    <div id="nav" align="center">
+    	<a href="index.html">Home</a>
+    	<a href="tonys.html">Tony's</a>
+    	<a href="slate.html">Slate</a>
+    </div>
+    <img src="../../imgs/slate.jpg" alt="Slate Coffee Bar"
+    height="460px"
+    width="800px">
+    <p>Slate is an up-and-coming roaster that also operates a single retail location. While they haven't been in business as long as Tony's, they appeal to younger and up-and-coming coffee connoisseurs. In other words... hipsters.</p>
+    
+    <p>Despite the negative connotations this connection might conjure, their coffee is quite good - although impressively over-priced. The shop is tucked away on a fairly non-descript corner of Market Street, although it's right across the street from a very swanky new farm-to-table restaurant.</p>
+    
+    <p>Of the two, Slate is probably better-positioned to capitalize on the active, coffee-going public - that is, young people who like to go hang out at coffee shops. The space it occupies is well-designed, embodying the sleek/modern yet semi-Bohemian/funky, eccentric aesthetic that seems to be so popular in Seattle's trendier neighborhoods.</p>
+    
+    <p>Slate's most distinguishing characteristic is that it attempts to blend a hip coffee shop with the craft cocktail bar concept. While this is almost a slam-dunk recipe for success, it creates an environment that is certainly not for everyone. For one thing, it produces wait times that can be painfully long; for another, the prices reflect the commitment to the craft bar experience.</p>
+
+   <div id="map_canvas"></div>
+
+<div id="footer">
+<p2>images used are from company websites</p2>
+</div>
+</div>
+</body>
+</html>

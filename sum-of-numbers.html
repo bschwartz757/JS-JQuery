@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sum of Numbers</title>
+<script>
+
+	// Tell the user what the program does
+	alert("Sum the numbers from 1 to entry");
+	
+	// do while loop always executes once, regardless of whether condition is true or false	
+	do {
+		// store user input in variable topNumber
+		var topNumber = prompt("Enter the top number to sum", 5);
+		// convert topNumber to Int from string
+		topNumber = parseInt(topNumber);	
+		
+			// prevents user from proceeding if topNumber is invalid input
+			if (isNaN(topNumber) || topNumber < 1 || topNumber > 100){
+			alert("Top number must be greater than 0 and less than 100");	
+			}
+		}
+		
+		while(isNaN(topNumber) || topNumber < 1 || topNumber > 100);
+		
+		// declare sum variable
+		var sum = 0;
+		
+		for (i=1; i<=topNumber; i++) {
+			
+			sum += i;	// sum = sum + i
+			alert("i is " + i);
+			alert("sum is " + sum);
+			alert("topNumber is " + topNumber);
+		}
+		
+		// output the result to the user
+		alert("Sum of the numbers 1 through " + topNumber + " = " + sum);
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

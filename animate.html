@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Animate</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+</script>
+
+<script>
+	$(document).ready(function() {// event handler, initialized when DOM is ready
+        $("#btn1").click(function() {
+			// += adds the value to the right to the height of the div
+			$("#the-div").animate({height:"+=100px", width:"+=100px", opacity:"0.5", margin:"+=100px", borderWidth:"+=5px"});
+		});
+		$("#btn2").click(function() {
+			$("#the-div").animate({height:"200px", width:"200px", opacity:"1", margin:"0", borderWidth:"1px"});
+		});
+    });
+</script>
+</head>
+
+<body>
+
+	<button id="btn1">Animate height</button>
+	<button id="btn2">Reset height</button>
+
+	<div id="the-div" style="background:blue;height:200px;width:200px;border:1px solid black;margin:10px">
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+	var total = 0, count = 0, number;
+	number = parseFloat(prompt("Enter a number:"));
+	while(!isNaN(number)) {
+		total += number;
+		count++;
+		number = parseFloat(
+			prompt("Enter another number " + "or click Cancel to stop:"));	
+	}
+	var average = total/count;
+	alert("The average is: " + average);
+	
+</script>
+</head>
+
+<body>
+</body>
+</html>

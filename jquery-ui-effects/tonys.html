@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tony's</title>
+<link href="../../css/coffeebars.css" rel="stylesheet" type="text/css">
+
+  <style>
+      #map_canvas {
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom:10px;
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map_canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(47.679749, -122.360792),
+          zoom: 18,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+
+<body>
+
+<div id = "wrapper">
+	<div id="header" align="center">
+    	<h1>Tony's Coffee Bar</h1>
+    </div>
+    <div id="nav" align="center">
+    	<a href="index.html">Home</a>
+    	<a href="tonys.html">Tony's</a>
+    	<a href="slate.html">Slate</a>
+    </div>
+    <img src="../../imgs/tonys.jpg" alt="Tony's Coffee Bar"
+    height="800px"
+    width="800px">
+    <p>Tony's Coffee has been roasting coffee in Bellingham since the 1970s. I've seen their coffee in grocery stores for years, but never realized just how good it could be. Lately it's become my favorite, but unfortunately they keep very limited hours. In fact, the shop alternates between "expanded summer hours" of UP TO Weds-Thurs, 8 am to 2 pm, and winter hours of Saturday-Sunday only, 8 am to 2 pm.</p> 
+    
+    <p>They only operate one retail location (which happens to be right up the street from my apartment), but they are starting to build a very impressive reputation. After winning America's Best Espresso at a competition in Seattle in 2013, the company added a Roaster's Choice award in 2014.</p>
+    
+    <p>In contrast to Slate's freshly remodeled space, Tony's aesthetic is relatively low-frills and appropriately Bellingham-esque. In fact, from the outside there is little to indicate what the space is. The lack of curb appeal would seem to indicate a lack of business awareness, but a visit to the shop quickly reveals that it's no accident but rather an intentional commitment to an ultra-casual environment.</p>
+    
+    <p>Like it's location, Tony's clientele - assuming there are enough of them present on a given day to provide a representative sample - are decidedly residential, young-to-middle aged professionals and retirees who prefer a quiet, homely setting.</p>
+
+   <div id="map_canvas"></div>
+
+<div id="footer">
+<p2>images used are from company websites</p2>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form Validation</title>
+
+<style>
+	h1 {
+		width:400px;
+		margin:50px auto;	
+	}
+
+	form {
+		width:300px;
+		margin:50px auto;
+		padding:20px;
+		border:2px solid blue;	
+	}
+		
+	.hidden {
+		display:none;	
+	}
+	
+	.error {
+		color:red;	
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+        $("#jquery-validate").submit(validateForm);
+    });
+	// validate form controls
+	function validateForm() {
+		$(".error").hide();
+		
+		  var validFirstName = validateTextField("#first-name", "#error-first-name");
+
+		  var validLastName = validateTextField("#last-name", "#error-last-name");
+
+		  var validAge = validateTextField("#age", "#error-age");
+		  
+		  // returns boolean; functions defined below
+		  // if the fields are valid, submit form
+		  return validFirstName && validLastName && validAge;
+	}
+
+	function validateTextField(fieldId, errorId)
+	{
+		// if the text field is blank, return false
+		if($(fieldId).val() == "")
+		{
+			$(errorId).show();
+			return false;	
+		}
+		// if the user entered anything at all, return true (valid)
+		return true;
+	}
+
+/*	//to-do: research compound conditionals with jQuery. Modify if statement to check to see if Age field isNaN or not:
+	function validateAgeField(fieldId, errorId)
+	{
+		// if the text field is blank, return false
+		if($(fieldId).val() == "")
+		{
+			$(errorId).show();
+			return false;	
+		}
+		// if the user entered anything at all, return true (valid)
+		return true;
+	}*/
+	
+	
+</script>
+
+</head>
+
+<body>
+
+<h1>Please enter your basic info</h1>
+
+<form id="jquery-validate" action="success.html">
+	<p>
+    	<label>First Name:
+        	<input type="text" id="first-name" name="first-name">
+    	</label>
+        <span id="error-first-name" class="hidden error">* First name cannot be blank</span>
+    </p>
+    
+	<p>
+    	<label>Last Name:
+        	<input type="text" id="last-name" name="last-name">
+    	</label>
+        <span id="error-last-name" class="hidden error">* Last name cannot be blank</span>
+    </p>
+    
+	<p>
+    	<label>Age:
+        	<input type="text" id="age" name="age">
+    	</label>
+        <span id="error-age" class="hidden error">* Age cannot be blank</span>
+    </p>    
+    
+    <button type="submit" name="submit">Continue</button>
+</form>
+
+</body>
+</html>
